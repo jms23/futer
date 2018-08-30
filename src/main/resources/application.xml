@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+         http://www.springframework.org/schema/aop 
+         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	 <bean id="myJavaBean" class="futer.MyJavaBean">  
+        <property name="desc" value="测试一下啦" />  
+        <property name="remark" value="这是备注信息啦啦啦" />  
+    </bean>  
+    <bean id="myBeanFactoryPostProcessor" class="futer.MyBeanFactoryPostProcessor" />  
+    
+     <bean id="Myconstructor" class="futer.ioc.constructor.Myconstructor">  
+        <constructor-arg ref="Myconstructor1"/> 
+    </bean>  
+    <bean id="Myconstructor1" class="futer.ioc.constructor.Myconstructor1">  
+    <property name="name" value="gyj0728"/>
+    </bean> 
+    
+</beans>
