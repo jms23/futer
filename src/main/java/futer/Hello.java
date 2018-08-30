@@ -16,27 +16,27 @@ public class Hello {
 
 	public static void main(String[] args) {
 		/**
-		 * spirng д╛хо╪сть╣дюЮйг org.springframework.beans.factory.xml.XmlBeanDefinitionReader
-		 * ╥╫╥╗ё╨ loadBeanDefinitions
+		 * spirng д╛О©╫о╪О©╫О©╫ь╣О©╫О©╫О©╫О©╫О©╫ org.springframework.beans.factory.xml.XmlBeanDefinitionReader
+		 * О©╫О©╫О©╫О©╫О©╫О©╫ loadBeanDefinitions
 		 * 
-		 * ох©╢©╢уБ╦ЖюЮйгвЖй╡ц╢сц╣дё©
-		 * йвохуБюЮн╩сз support ╟ЭюОё╛с╕╦цйТсз╣зхЩ╥╫ж╖Ёж╣д╧╓╬ъ org.springframework.context.support
-		 * 1║╒ClassPathXmlApplicationContext йвох╩АЁУй╪╩╞р╩╦Жвйт╢╫БнЖюЮ resource, ╣╠вЖ╣╠г╟╩╥╬Ё╣диообндвйт╢╫БнЖфВ
-		 * 2║╒©иоК╤Ьж╙ё╛╣╠г╟╩╥╬ЁйгтздЁл╗╩ЗфВиоё╛дгц╢spring╠ь╤╗б╥╬╤╨м╤╗рЕтз╣╠г╟╩╥╬Ё╣др╩п╘йТпт╫Ьпп╪сть(╠ххГ╤╗рЕтзprotertiesюОцФ╣до╣мЁеДжцнд╪Чё╛╢Ф╢╒тздзжц╣др╩╦ЖmapхщфВжпрт╠╦╨СпЬй╧сц)
-		 * 3║╒╫БнЖ╣╠г╟╢╚хКClassPathXmlApplicationContext юОцФ╣деДжцнд╪Чжп╣ду╪н╩╥Ш  $ ╢З╠М╣двж╥Ш
-		 * 4║╒ж╢ппр╩╢нк╒пб╣д╥╫╥╗ onrefsh(), ╪сакр╩╦ЖоъЁлм╛╡╫╣дкЬ new Object();
-		 * 5║╒к╒пб╥╫╥╗юОсцакр╩╦ЖйЩ╬щт╢ю╢╢Ф╢╒╥╒╡╪йб╪Чё╨ this.earlyApplicationEvents = new LinkedHashSet<>(); 
-		 * 6║╒
+		 * О©╫х©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╡ц╢О©╫ц╣дёО©╫
+		 * О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫н╩О©╫О©╫ support О©╫О©╫О©╫Оё╛с╕О©╫О©╫О©╫О©╫О©╫з╣О©╫О©╫О©╫О©╫О©╫ж╖О©╫ж╣д╧О©╫О©╫О©╫ org.springframework.context.support
+		 * 1О©╫О©╫ClassPathXmlApplicationContext О©╫О©╫О©╫х╩О©╫О©╫й╪О©╫О©╫р╩О©╫О©╫О©╫О©╫т╢О©╫О©╫О©╫О©╫О©╫О©╫ resource, О©╫О©╫О©╫О©╫О©╫О©╫г╟О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╢О©╫О©╫О©╫О©╫О©╫О©╫
+		 * 2О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╙О©╫О©╫О©╫О©╫г╟О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫дЁл╗О©╫О©╫О©╫О©╫О©╫оёО©╫О©╫О©╫ц╢springО©╫ь╤О©╫б╥О©╫О©╫О©╫м╤О©╫О©╫О©╫О©╫з╣О©╫г╟О©╫О©╫О©╫О©╫О©╫О©╫р╩п╘О©╫О©╫О©╫т╫О©╫О©╫п╪О©╫О©╫О©╫(О©╫О©╫О©╫Г╤╗О©╫О©╫О©╫О©╫protertiesО©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫д╪О©╫О©╫О©╫О©╫Ф╢╒О©╫О©╫О©╫О©╫О©╫ц╣О©╫р╩О©╫О©╫mapО©╫О©╫О©╫О©╫О©╫О©╫О©╫т╠О©╫О©╫О©╫О©╫О©╫й╧О©╫О©╫)
+		 * 3О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╟О©╫О©╫О©╫О©╫ClassPathXmlApplicationContext О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╪О©╫О©╫п╣О©╫у╪н╩О©╫О©╫  $ О©╫О©╫О©╫О©╫О©╫О©╫ж╥О©╫
+		 * 4О©╫О©╫ж╢О©╫О©╫р╩О©╫О©╫к╒О©╫б╣д╥О©╫О©╫О©╫ onrefsh(), О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫ъЁО©╫м╛О©╫О©╫О©╫О©╫О©╫О©╫ new Object();
+		 * 5О©╫О©╫к╒О©╫б╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫т╢О©╫О©╫О©╫Ф╢╒О©╫О©╫О©╫О©╫О©╫б╪О©╫О©╫О©╫ this.earlyApplicationEvents = new LinkedHashSet<>(); 
+		 * 6О©╫О©╫
 		 * 
 		 */
 		System.out.println("9999999999");
 		
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
 		
-		applicationContext.getEnvironment();
+		System.out.println(applicationContext.getEnvironment());
 		
 		/**
-		 * м╗╧ЩpostProcess╢╕юМфВ╦д╠Дак╤тоС╣дйТпт
+		 * м╗О©╫О©╫postProcessО©╫О©╫О©╫О©╫О©╫О©╫О©╫д╠О©╫О©╫к╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
 		 */
 		MyJavaBean bean = (MyJavaBean) applicationContext.getBean("myJavaBean");
 		
