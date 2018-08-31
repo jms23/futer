@@ -1,8 +1,11 @@
 package futer.ioc.constructor;
 
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.RootBeanDefinition;
 
 public class BeanFactoryDemo {
 	/**
@@ -15,8 +18,10 @@ public class BeanFactoryDemo {
 		//beanFactory.registerBeanDefinition(Myconstructor.class.getSimpleName(), beanDefinition);
 		
 		BeanFactory factory = bindBean(beanFactory);
-		Myconstructor myconstructor = factory.getBean(Myconstructor.class);
+		Myconstructor myconstructor = (Myconstructor) factory.getBean("Myconstructor");
 				System.err.println(myconstructor.toString());
+				
+				System.out.println(myconstructor.getMyconstructor1());
 	}
 	
 	
@@ -26,10 +31,15 @@ public class BeanFactoryDemo {
 	 * @return
 	 */
 	public static BeanFactory bindBean(BeanDefinitionRegistry beanDefinitionRegistry) {
-//		beanDefinitionRegistry.
-		//beanDefinitionRegistry
+		AbstractBeanDefinition beanDefinition = new RootBeanDefinition(Myconstructor.class);
+		beanDefinitionRegistry.registerBeanDefinition("Myconstructor", beanDefinition);
 		
-		//beanDefinitionRegistry.registerBeanDefinition("test", beanDefinition);
+		AbstractBeanDefinition beanDefinition1 = new RootBeanDefinition(Myconstructor1.class);
+		// 注入其他依赖
+		ConstructorArgumentValues argumentValues = new ConstructorArgumentValues();
+		argumentValues.addIndexedArgumentValue(0, beanDefinition1);
+		
+		beanDefinition.setConstructorArgumentValues(argumentValues);
 		return (BeanFactory) beanDefinitionRegistry;
 	}
 
