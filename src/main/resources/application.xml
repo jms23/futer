@@ -17,9 +17,8 @@
     <bean id="myBeanFactoryPostProcessor" class="futer.MyBeanFactoryPostProcessor" />  
     
      <bean id="Myconstructor" class="futer.ioc.constructor.Myconstructor">  
-        <constructor-arg ref="Myconstructor1"/> 
     </bean>  
-    <bean id="Myconstructor1" class="futer.ioc.constructor.Myconstructor1">  
+    <bean id="Myconstructor1" class="futer.ioc.constructor.Myconstructor1"  scope="prototype">  
     <property name="name" value="gyj0728"/>
     </bean> 
     
